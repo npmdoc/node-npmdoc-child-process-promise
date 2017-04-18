@@ -1,9 +1,14 @@
-# api documentation for  [child-process-promise (v2.2.1)](https://github.com/patrick-steele-idem/child-process-promise#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-child-process-promise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-child-process-promise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-child-process-promise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-child-process-promise)
+# npmdoc-child-process-promise
+
+#### api documentation for  [child-process-promise (v2.2.1)](https://github.com/patrick-steele-idem/child-process-promise#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-child-process-promise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-child-process-promise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-child-process-promise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-child-process-promise)
+
 #### Simple wrapper around the "child_process" module that makes use of promises
 
-[![NPM](https://nodei.co/npm/child-process-promise.png?downloads=true)](https://www.npmjs.com/package/child-process-promise)
+[![NPM](https://nodei.co/npm/child-process-promise.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/child-process-promise)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-child-process-promise_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-child-process-promise/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-child-process-promise/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Patrick Steele-Idem",
-        "email": "pnidem@gmail.com"
+        "name": "Patrick Steele-Idem"
     },
     "babel": {
         "presets": [
@@ -69,12 +73,10 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "psteeleidem",
-            "email": "psteeleidem@ebay.com"
+            "name": "psteeleidem"
         },
         {
-            "name": "pnidem",
-            "email": "pnidem@gmail.com"
+            "name": "pnidem"
         }
     ],
     "name": "child-process-promise",
@@ -82,7 +84,6 @@
     "publishConfig": {
         "registry": "http://registry.npmjs.org/"
     },
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/patrick-steele-idem/child-process-promise.git"
@@ -95,210 +96,6 @@
     },
     "version": "2.2.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module child-process-promise](#apidoc.module.child-process-promise)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise (executor)](#apidoc.element.child-process-promise.ChildProcessPromise)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>exec ()](#apidoc.element.child-process-promise.exec)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>execFile ()](#apidoc.element.child-process-promise.execFile)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>fork (modulePath, args, options)](#apidoc.element.child-process-promise.fork)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>spawn (command, args, options)](#apidoc.element.child-process-promise.spawn)
-1.  object <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise.prototype
-
-#### [module child-process-promise.ChildProcessPromise](#apidoc.module.child-process-promise.ChildProcessPromise)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise (executor)](#apidoc.element.child-process-promise.ChildProcessPromise.ChildProcessPromise)
-
-#### [module child-process-promise.ChildProcessPromise.prototype](#apidoc.module.child-process-promise.ChildProcessPromise.prototype)
-1.  [function <span class="apidocSignatureSpan">child-process-promise.ChildProcessPromise.prototype.</span>fail (onRejected)](#apidoc.element.child-process-promise.ChildProcessPromise.prototype.fail)
-
-
-
-# <a name="apidoc.module.child-process-promise"></a>[module child-process-promise](#apidoc.module.child-process-promise)
-
-#### <a name="apidoc.element.child-process-promise.ChildProcessPromise"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise (executor)](#apidoc.element.child-process-promise.ChildProcessPromise)
-- description and source-code
-```javascript
-class ChildProcessPromise extends Promise {
-    constructor(executor) {
-        var resolve;
-        var reject;
-
-        super((_resolve, _reject) => {
-            resolve = _resolve;
-            reject = _reject;
-
-            if (executor) {
-                executor(resolve, reject);
-            }
-        });
-
-        this._cpResolve = resolve;
-        this._cpReject = reject;
-        this.childProcess = undefined;
-    }
-
-    progress(callback) {
-        process.nextTick(() => {
-            callback(this.childProcess);
-        });
-
-        return this;
-    }
-
-    then(onFulfilled, onRejected) {
-        var newPromise = super.then(onFulfilled, onRejected);
-        newPromise.childProcess = this.childProcess;
-        return newPromise;
-    }
-
-    catch(onRejected) {
-        var newPromise = super.catch(onRejected);
-        newPromise.childProcess = this.childProcess;
-        return newPromise;
-    }
-
-    done() {
-        this.catch((e) => {
-            process.nextTick(() => {
-                throw e;
-            });
-        });
-    }
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.child-process-promise.exec"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>exec ()](#apidoc.element.child-process-promise.exec)
-- description and source-code
-```javascript
-function exec() {
-    return doExec('exec', arguments);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.child-process-promise.execFile"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>execFile ()](#apidoc.element.child-process-promise.execFile)
-- description and source-code
-```javascript
-function execFile() {
-    return doExec('execFile', arguments);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.child-process-promise.fork"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>fork (modulePath, args, options)](#apidoc.element.child-process-promise.fork)
-- description and source-code
-```javascript
-function fork(modulePath, args, options) {
-    return doSpawn(child_process.fork, modulePath, args, options);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.child-process-promise.spawn"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>spawn (command, args, options)](#apidoc.element.child-process-promise.spawn)
-- description and source-code
-```javascript
-function spawn(command, args, options) {
-    return doSpawn(crossSpawn, command, args, options);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.child-process-promise.ChildProcessPromise"></a>[module child-process-promise.ChildProcessPromise](#apidoc.module.child-process-promise.ChildProcessPromise)
-
-#### <a name="apidoc.element.child-process-promise.ChildProcessPromise.ChildProcessPromise"></a>[function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise (executor)](#apidoc.element.child-process-promise.ChildProcessPromise.ChildProcessPromise)
-- description and source-code
-```javascript
-class ChildProcessPromise extends Promise {
-    constructor(executor) {
-        var resolve;
-        var reject;
-
-        super((_resolve, _reject) => {
-            resolve = _resolve;
-            reject = _reject;
-
-            if (executor) {
-                executor(resolve, reject);
-            }
-        });
-
-        this._cpResolve = resolve;
-        this._cpReject = reject;
-        this.childProcess = undefined;
-    }
-
-    progress(callback) {
-        process.nextTick(() => {
-            callback(this.childProcess);
-        });
-
-        return this;
-    }
-
-    then(onFulfilled, onRejected) {
-        var newPromise = super.then(onFulfilled, onRejected);
-        newPromise.childProcess = this.childProcess;
-        return newPromise;
-    }
-
-    catch(onRejected) {
-        var newPromise = super.catch(onRejected);
-        newPromise.childProcess = this.childProcess;
-        return newPromise;
-    }
-
-    done() {
-        this.catch((e) => {
-            process.nextTick(() => {
-                throw e;
-            });
-        });
-    }
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.child-process-promise.ChildProcessPromise.prototype"></a>[module child-process-promise.ChildProcessPromise.prototype](#apidoc.module.child-process-promise.ChildProcessPromise.prototype)
-
-#### <a name="apidoc.element.child-process-promise.ChildProcessPromise.prototype.fail"></a>[function <span class="apidocSignatureSpan">child-process-promise.ChildProcessPromise.prototype.</span>fail (onRejected)](#apidoc.element.child-process-promise.ChildProcessPromise.prototype.fail)
-- description and source-code
-```javascript
-catch(onRejected) {
-    var newPromise = super.catch(onRejected);
-    newPromise.childProcess = this.childProcess;
-    return newPromise;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
