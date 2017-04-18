@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.ChildProcessError">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessError
+            <span class="apidocSignatureSpan">(message, code, childProcess, stdout, stderr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.ChildProcessPromise">
             function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessPromise
             <span class="apidocSignatureSpan">(executor)</span>
@@ -114,6 +123,19 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.ChildProcessError">module child-process-promise.ChildProcessError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.ChildProcessError.ChildProcessError">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessError
+            <span class="apidocSignatureSpan">(message, code, childProcess, stdout, stderr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.ChildProcessPromise">module child-process-promise.ChildProcessPromise</a><ol>
 
         <li>
@@ -140,10 +162,85 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.exec">module child-process-promise.exec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.exec.exec">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>exec
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.execFile">module child-process-promise.execFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.execFile.execFile">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>execFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.fork">module child-process-promise.fork</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.fork.fork">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>fork
+            <span class="apidocSignatureSpan">(modulePath, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.child-process-promise.spawn">module child-process-promise.spawn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.child-process-promise.spawn.spawn">
+            function <span class="apidocSignatureSpan">child-process-promise.</span>spawn
+            <span class="apidocSignatureSpan">(command, args, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.child-process-promise" id="apidoc.module.child-process-promise">module child-process-promise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.ChildProcessError" id="apidoc.element.child-process-promise.ChildProcessError">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessError
+        <span class="apidocSignatureSpan">(message, code, childProcess, stdout, stderr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ChildProcessError extends Error {
+    constructor(message, code, childProcess, stdout, stderr) {
+        super(message);
+        Error.captureStackTrace(this, this.constructor);
+        this.name = this.constructor.name;
+        this.code = code;
+        this.childProcess = childProcess;
+        this.stdout = stdout;
+        this.stderr = stderr;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -269,6 +366,34 @@
 </div>
 
 <div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.child-process-promise.ChildProcessError" id="apidoc.module.child-process-promise.ChildProcessError">module child-process-promise.ChildProcessError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.ChildProcessError.ChildProcessError" id="apidoc.element.child-process-promise.ChildProcessError.ChildProcessError">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>ChildProcessError
+        <span class="apidocSignatureSpan">(message, code, childProcess, stdout, stderr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ChildProcessError extends Error {
+    constructor(message, code, childProcess, stdout, stderr) {
+        super(message);
+        Error.captureStackTrace(this, this.constructor);
+        this.name = this.constructor.name;
+        this.code = code;
+        this.childProcess = childProcess;
+        this.stdout = stdout;
+        this.stderr = stderr;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.child-process-promise.ChildProcessPromise" id="apidoc.module.child-process-promise.ChildProcessPromise">module child-process-promise.ChildProcessPromise</a></h1>
 
 
@@ -347,6 +472,86 @@
     var newPromise = super.catch(onRejected);
     newPromise.childProcess = this.childProcess;
     return newPromise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.child-process-promise.exec" id="apidoc.module.child-process-promise.exec">module child-process-promise.exec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.exec.exec" id="apidoc.element.child-process-promise.exec.exec">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>exec
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exec() {
+    return doExec(&#x27;exec&#x27;, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.child-process-promise.execFile" id="apidoc.module.child-process-promise.execFile">module child-process-promise.execFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.execFile.execFile" id="apidoc.element.child-process-promise.execFile.execFile">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>execFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function execFile() {
+    return doExec(&#x27;execFile&#x27;, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.child-process-promise.fork" id="apidoc.module.child-process-promise.fork">module child-process-promise.fork</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.fork.fork" id="apidoc.element.child-process-promise.fork.fork">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>fork
+        <span class="apidocSignatureSpan">(modulePath, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fork(modulePath, args, options) {
+    return doSpawn(child_process.fork, modulePath, args, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.child-process-promise.spawn" id="apidoc.module.child-process-promise.spawn">module child-process-promise.spawn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.child-process-promise.spawn.spawn" id="apidoc.element.child-process-promise.spawn.spawn">
+        function <span class="apidocSignatureSpan">child-process-promise.</span>spawn
+        <span class="apidocSignatureSpan">(command, args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function spawn(command, args, options) {
+    return doSpawn(crossSpawn, command, args, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>

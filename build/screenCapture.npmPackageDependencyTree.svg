@@ -1,14 +1,17 @@
-<svg height="174" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="174" fill="#555" width="720"></rect>
+<svg height="222" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="222" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">└─┬ child-process-promise@2.2.1 </tspan>
-<tspan x="10" y="42">  ├─┬ cross-spawn@4.0.2 </tspan>
-<tspan x="10" y="58">  │ ├─┬ lru-cache@4.0.2 </tspan>
-<tspan x="10" y="74">  │ │ ├── pseudomap@1.0.2 </tspan>
-<tspan x="10" y="90">  │ │ └── yallist@2.1.2 </tspan>
-<tspan x="10" y="106">  │ └─┬ which@1.2.14 </tspan>
-<tspan x="10" y="122">  │   └── isexe@2.0.0 </tspan>
-<tspan x="10" y="138">  ├── node-version@1.0.0 </tspan>
-<tspan x="10" y="154">  └── promise-polyfill@6.0.2</tspan>
+<tspan x="10" y="26">1 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ child-process-promise@2.2.1 </tspan>
+<tspan x="10" y="90">  ├─┬ cross-spawn@4.0.2 </tspan>
+<tspan x="10" y="106">  │ ├─┬ lru-cache@4.0.2 </tspan>
+<tspan x="10" y="122">  │ │ ├── pseudomap@1.0.2 </tspan>
+<tspan x="10" y="138">  │ │ └── yallist@2.1.2 </tspan>
+<tspan x="10" y="154">  │ └─┬ which@1.2.14 </tspan>
+<tspan x="10" y="170">  │   └── isexe@2.0.0 </tspan>
+<tspan x="10" y="186">  ├── node-version@1.0.0 </tspan>
+<tspan x="10" y="202">  └── promise-polyfill@6.0.2</tspan>
 </text>
 </svg>
