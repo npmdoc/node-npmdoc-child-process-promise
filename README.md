@@ -1,6 +1,6 @@
 # npmdoc-child-process-promise
 
-#### api documentation for  [child-process-promise (v2.2.1)](https://github.com/patrick-steele-idem/child-process-promise#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-child-process-promise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-child-process-promise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-child-process-promise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-child-process-promise)
+#### basic api documentation for  [child-process-promise (v2.2.1)](https://github.com/patrick-steele-idem/child-process-promise#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-child-process-promise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-child-process-promise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-child-process-promise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-child-process-promise)
 
 #### Simple wrapper around the "child_process" module that makes use of promises
 
@@ -94,7 +94,8 @@
         "prepublish": "babel lib --out-dir lib-es5",
         "test": "npm run mocha"
     },
-    "version": "2.2.1"
+    "version": "2.2.1",
+    "bin": {}
 }
 ```
 
